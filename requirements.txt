@@ -1,6 +1,6 @@
+Flask==3.0.0
 flask-cors==6.0.1
-transformers
-torch # ou tensorflow, dependendo da sua preferência para o modelo Hugging Face
-openai
-PyPDF2
-gunicorn
+gunicorn==20.1.0
+requests==2.32.3
+PyPDF2==3.0.1
+Werkzeug==3.1.3
