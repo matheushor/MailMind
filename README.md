@@ -48,8 +48,84 @@ Além disso, o sistema gera **respostas automáticas concisas e profissionais** 
 ## 🛠️ Configuração do Ambiente Local
 
 ### 1️⃣ Clonar o Repositório
-
 ```bash
-git clone https://github.com/matheushor/MailMind.git
+git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
 cd SEU_REPOSITORIO
+```
 
+### 2️⃣ Criar e Ativar um Ambiente Virtual
+```
+python -m venv venv
+```
+###
+
+### Windows:
+```
+.\venv\Scripts\activate
+```
+### macOS/Linux:
+```
+source venv/bin/activate
+```
+### 3️⃣ Instalar as Dependências
+```
+pip install -r requirements.txt
+```
+Se necessário, gere o arquivo:
+```
+pip freeze > requirements.txt
+```
+Ou instale manualmente:
+```
+pip install Flask Flask-CORS requests PyPDF2 gunicorn
+```
+### 4️⃣ Configurar a Chave da API Google Gemini
+Obtenha sua chave em https://aistudio.google.com e defina-a como variável de ambiente:
+### Windows (PowerShell):
+```
+$env:GOOGLE_API_KEY="SUA_CHAVE_GEMINI_AQUI"
+```
+### Windows (CMD)
+```
+set GOOGLE_API_KEY=SUA_CHAVE_GEMINI_AQUI
+```
+### macOS/Linux:
+```
+export GOOGLE_API_KEY="SUA_CHAVE_GEMINI_AQUI"
+```
+⚠️ Para testes rápidos, pode-se definir no código app.py, mas **NÃO é seguro para produção:**
+```
+GOOGLE_API_KEY = "SUA_CHAVE_GEMINI_AQUI"
+```
+### 5️⃣ Executar a Aplicação
+Na raiz do projeto, com o ambiente virtual ativado:
+```
+python app.py
+```
+
+Acesse em: http://127.0.0.1:5000
+
+## 💡 Como Usar
+
+1. Acesse a aplicação no navegador.
+
+2. Insira o conteúdo do e-mail:
+
+- 📋 Colagem de texto
+
+- 📎 Upload de .txt ou .pdf
+
+3. Clique em “Classificar Email”
+
+- Visualize os resultados:
+
+- Classificação
+
+- Confiança da IA
+
+- Justificativa
+
+- Resposta sugerida
+
+ ## 📄 Licença
+Este projeto está licenciado sob a MIT License.
