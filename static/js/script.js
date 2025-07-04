@@ -12,14 +12,12 @@ const resultContent = document.getElementById('resultContent');
 const error = document.getElementById('error');
 const errorMessage = document.getElementById('errorMessage');
 
-// File upload handling
 fileInput.addEventListener('change', function(e) {
     const file = e.target.files[0];
     if (file) {
         fileName.textContent = file.name;
         fileInfo.classList.remove('hidden');
         
-        // Read file content for text files
         if (file.type === 'text/plain') {
             const reader = new FileReader();
             reader.onload = function(e) {
@@ -30,20 +28,20 @@ fileInput.addEventListener('change', function(e) {
     }
 });
 
-// Remove file
+
 removeFile.addEventListener('click', function() {
     fileInput.value = '';
     fileInfo.classList.add('hidden');
     emailContent.value = '';
 });
 
-// Form submission
+
 form.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const formData = new FormData(form);
     
-    // Show loading state
+   
     submitBtn.disabled = true;
     submitText.style.display = 'none';
     loadingText.classList.add('active');
