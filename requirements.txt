@@ -1,4 +1,4 @@
-Flask
+flask-cors==6.0.1
 transformers
 torch # ou tensorflow, dependendo da sua preferência para o modelo Hugging Face
 openai
