@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MailMind - Classificação Inteligente de Emails</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="/static/css/style.css" rel="stylesheet" />
+     <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+</head>
+
+    <body class="bg-gradient-custom min-h-screen">
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-2">
+                    <i class="fas fa-brain mr-3"></i>MailMind
+                </h1>
+                <p class="text-xl opacity-90">Classificação Inteligente de Emails com IA</p>
+                
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Upload Section -->
+            <div class="bg-white rounded-lg card-shadow p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-upload mr-3 text-azul-escuro"></i>
+                    Classificar Email
+                </h2>
+                
+                <form id="emailForm" enctype="multipart/form-data">
+                    <!-- File Upload -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Upload de Arquivo (opcional)
+                        </label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-orange-400 transition-colors">
+                            <input type="file" id="fileInput" name="file" accept=".txt,.pdf" class="hidden" />
+                            <label for="fileInput" class="cursor-pointer">
+                                <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                                <p class="text-gray-600">
+                                    <span class="text-orange-600 font-medium">Clique para fazer upload</span>
+                                    ou arraste e solte
+                                </p>
+                                <p class="text-xs text-gray-500 mt-2">Formatos: TXT, PDF (máx. 16MB)</p>
+                            </label>
+                        </div>
+                        <div id="fileInfo" class="mt-2 hidden">
+                            <div class="bg-gray-100 rounded p-3 flex items-center">
+                                <i class="fas fa-file-alt text-gray-600 mr-2"></i>
+                                <span id="fileName" class="text-sm text-gray-700"></span>
+                                <button type="button" id="removeFile" class="ml-auto text-red-500 hover:text-red-700">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Input -->
+                    <div class="mb-6">
+                        <label for="emailContent" class="block text-sm font-medium text-gray-700 mb-2">
+                            Conteúdo do Email
+                        </label>
+                        <textarea
+                            id="emailContent"
+                            name="content"
+                            rows="4"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                            placeholder="Cole ou digite o conteúdo do email aqui..."
+                        ></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+<button
+    type="submit"
+    id="submitBtn"
+    class="w-full btn-theme py-3 px-6 rounded-md font-medium"
+>
+
+  <span id="submitText">
+    <i class="fas fa-paper-plane mr-2"></i>Classificar Email
+  </span>
+  <span id="loadingText" class="loading">
+    <i class="fas fa-spinner fa-spin mr-2"></i>Processando...
+  </span>
+</button>
+
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="bg-white rounded-lg card-shadow p-8 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-chart-bar mr-3 text-green-600"></i>
+                    Resultados da Classificação
+                </h2>
+                
+                <div id="resultContent">
+                    <!-- Results will be populated here -->
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div id="error" class="bg-red-50 border border-red-200 rounded-lg p-6 hidden">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>
+                    <div>
+                        <h3 class="text-red-800 font-medium">Erro no Processamento</h3>
+                        <p id="errorMessage" class="text-red-600 text-sm mt-1"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=>
+        <div class="container mx-auto px-10 text-center">
+            <p>&copy; 2025 MailMind. Solução para classificação inteligente de emails.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

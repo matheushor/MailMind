@@ -1,0 +1,35 @@
+
+.card-shadow {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+    display: none;
+}
+
+.loading.active {
+    display: block;
+}
+
+/* Azul escuro e laranja */
+.text-azul-escuro {
+    color: #0a1f44;
+}
+.bg-azul-escuro {
+    background-color: #0a1f44;
+}
+/* Gradiente azul escuro para laranja */
+.bg-gradient-custom {
+  background: linear-gradient(135deg, #0a1f44 0%, #f97316 100%);
+  min-height: 100vh;
+  margin: 0;
+}
+.btn-theme {
+  background: linear-gradient(135deg,  #0a1f44 100%);
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.btn-theme:hover {
+  background: linear-gradient(135deg,  #bb4e00 100%);
+}
