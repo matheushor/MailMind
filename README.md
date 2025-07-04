@@ -49,7 +49,7 @@ Além disso, o sistema gera **respostas automáticas concisas e profissionais** 
 
 ### 1️⃣ Clonar o Repositório
 ```bash
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone https://github.com/matheushor/MailMind.git
 cd SEU_REPOSITORIO
 ```
 
