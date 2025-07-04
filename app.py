@@ -12,15 +12,13 @@ import io # Para manipular streams de dados (necessário para PyPDF2 com uploads
 
 # Inicialização da aplicação Flask
 app = Flask(__name__)
-CORS(app) # Habilita Cross-Origin Resource Sharing para permitir que o frontend (rodando em outra porta) se comunique com o backend
+CORS(app) # Habilita Cross-Origin Resource Sharing para permitir que o frontend se comunique com o backend
 
 # --- Configuração da Aplicação ---
-UPLOAD_FOLDER = 'uploads' # Define a pasta onde arquivos temporários podem ser armazenados (não usado diretamente no fluxo atual, mas boa prática)
+UPLOAD_FOLDER = 'uploads' # Define a pasta onde arquivos temporários podem ser armazenados 
 ALLOWED_EXTENSIONS = {'txt', 'pdf'} # Define as extensões de arquivo permitidas para upload
 
-# CUIDADO: Chave de API embutida diretamente no código NÃO É SEGURO para ambientes de produção.
-# Para produção, use variáveis de ambiente (ex: GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")).
-# Para este exemplo, a chave é embutida para facilitar o teste imediato.
+
 # SUBSTITUA "SUA_CHAVE_GEMINI_AQUI" PELA SUA CHAVE REAL DA API GEMINI.
 GOOGLE_API_KEY = "AIzaSyCIpNLj5xA1AXWchPeUNoIifIIoy91MGUk" 
 
@@ -75,7 +73,7 @@ def classify_email_with_gemini(content):
     """
     
     # --- PROMPT DE IA OTIMIZADO ---
-    # Este prompt é crucial para a qualidade e consistência das respostas da IA.
+    
     # Ele define o "papel" da IA, os critérios de classificação com exemplos, e o formato de saída obrigatório.
     prompt = f"""
 Você é um assistente de IA especializado na classificação e resposta de e-mails em um ambiente de atendimento ao cliente financeiro. Seu objetivo é analisar a intenção de cada e-mail e gerar uma resposta inicial concisa e profissional.
