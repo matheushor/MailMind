@@ -3,3 +3,4 @@ transformers
 torch # ou tensorflow, dependendo da sua preferência para o modelo Hugging Face
 openai
 PyPDF2
+gunicorn
