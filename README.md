@@ -129,3 +129,7 @@ Acesse em: http://127.0.0.1:5000
 
  ## 📄 Licença
 Este projeto está licenciado sob a MIT License.
+
+## Deploy
+
+(O deploy foi realizado no Render versão gratuita, pode ser que ao entrar no website tenha que aguardar 1min, para ele sair do modo descanso)
